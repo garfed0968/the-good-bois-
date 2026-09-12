@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geospatial Polygon Mapper</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Control Bar (Left) -->
+      <div id="controls">
+        
+        <!-- NEW: Location Search Bar -->
+        <input type="text" id="search-box" class="search-input" placeholder="Search for a location (e.g., Bole, Piassa)..." />
+        
+        <!-- Group 1: Drawing Tools -->
+        <div class="button-group">
+          <button id="btn-new" class="btn primary">New Polygon</button>
+          <button id="btn-undo" class="btn secondary" disabled>Undo</button>
+          <button id="btn-finish" class="btn success" disabled>Finish</button>
+          <button id="btn-cancel" class="btn danger" disabled>Cancel</button>
+        </div>
+        
+        <!-- Group 2: Data Transfer Tools -->
+        <div class="button-group">
+          <button id="btn-import" class="btn secondary">Import Data</button>
+          <input type="file" id="file-import" accept=".json" style="display: none;" />
+          <button id="btn-export" class="btn secondary">Export Reports</button>
+        </div>
+        
+        <div id="status-display">Mode: <strong>Idle</strong> | Points Collected: <strong>0</strong></div>
+      </div>
+
+      <!-- Data Panel (Right) -->
+      <div id="sidebar">
+        <h3 id="sidebar-header" title="Click to collapse/expand">
+          Saved Locations <span id="toggle-icon">▼</span>
+        </h3>
+        <div id="location-list">
+          <p class="empty-msg">No locations saved yet.</p>
+        </div>
+      </div>
+
+      <!-- Map Canvas -->
+      <div id="map"></div>
+    </div>
+
+    <!-- IMPORTANT: Added 'places' to the libraries parameter! -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfYLLPA0a2_ByH_2PKw7pzaqvmBcwLnR0&libraries=geometry,places"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

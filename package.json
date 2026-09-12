@@ -1,0 +1,12 @@
+{
+  "name": "map-survey-app",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.66.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2"
+  }
+}
