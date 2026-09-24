@@ -2,5 +2,5 @@ node_modules/
 dist/
 .env
 *.local
-survey_backup.json
 survey_raw_data.json
+survey_backup.json
